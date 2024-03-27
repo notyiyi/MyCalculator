@@ -1,0 +1,121 @@
+﻿<Window x:Class="MyCalculator.WindowScience"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyCalculator"
+        mc:Ignorable="d"
+        Title="WindowScience" Height="450" Width="800">
+    <Grid >
+        <!--九行-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.6*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--十列-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnMenu" Content="≡科学" Margin="3,0"  
+            FontSize="10" MinHeight="26" MinWidth="40" MaxHeight="26" MaxWidth="40"
+                Grid.Row="0" Grid.Column="0"
+                >
+            <Button.ContextMenu> 
+                <ContextMenu Name="contextMenu">
+                    <MenuItem Header="MainWindow" Click="MenuItem_Click"/>
+                    <MenuItem Header="WindowScience" Click="MenuItem_Click"/>
+                </ContextMenu>
+            </Button.ContextMenu>
+        </Button>
+
+        <TextBlock x:Name="Out_2_2"  Grid.Row="1" Grid.ColumnSpan="10" TextAlignment="Right" FontSize="18"></TextBlock>
+        <TextBlock x:Name="Out_2_1"  Grid.Row="2" Grid.ColumnSpan="10" TextAlignment="Right" FontSize="30"></TextBlock>
+
+        <StackPanel x:Name="Stack_T" Grid.Row="3" Grid.ColumnSpan="5" 
+                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+            <RadioButton GroupName="du"  x:Name="B_Deg" IsChecked = "True"  Content="度"   Width="132" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="B_Deg_Checked"></RadioButton>
+            <RadioButton GroupName="du" x:Name="B_Radian" Content="弧度" Width="132" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="B_Radian_Checked"></RadioButton>
+            <RadioButton GroupName="du" x:Name="B_Gradient" Content="梯度" Width="132" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="B_Gradient_Checked"></RadioButton>
+        </StackPanel>
+        <Button x:Name="B_M2_Clean" Content="MC" Grid.Row="3" Grid.Column="5" Margin="2" Click="B_M2_Clean_Click" ></Button>
+        <!--MR：显示记忆的数字（Memory Recall）-->
+        <Button x:Name="B_M2_Recall" Content="MR" Grid.Row="3" Grid.Column="6" Margin="2" Click="B_M2_Recall_Click" ></Button>
+        <!--MS：记忆当前显示的数字（Memory Save）-->
+        <Button x:Name="B_M2_Save" Content="MS" Grid.Row="3" Grid.Column="7" Margin="2" Click="B_M2_Save_Click"></Button>
+        <Button x:Name="B_M2_Add" Content="M+" Grid.Row="3" Grid.Column="8" Margin="2" Click="B_M2_Add_Click"></Button>
+        <Button x:Name="B_M2_Minus" Content="M-" Grid.Row="3" Grid.Column="9" Margin="2" Click="B_M2_Minus_Click" ></Button>
+
+        <Button Grid.Row="4" Grid.Column="0" Margin="2" IsEnabled="False"></Button>
+        <Button x:Name="B_Inv" Content="Inv" Grid.Row="4" Grid.Column="1" Margin="2" Click="B_Inv_Click"></Button>
+        <Button x:Name="B_Ln" Content="Ln" Grid.Row="4" Grid.Column="2" Margin="2" Click="B_Ln_Click"></Button>
+        <Button x:Name="B_LeftPar" Content="(" Grid.Row="4" Grid.Column="3" Margin="2" Click="B_LeftPar_Click" ></Button>
+        <Button x:Name="B_RightPar" Content=")" Grid.Row="4" Grid.Column="4" Margin="2" Click="B_RightPar_Click" ></Button>
+        <Button x:Name="B_2_delete" Content="&lt;-" Grid.Row="4" Grid.Column="5" Margin="2" Click="B_2_delete_Click"></Button>
+        <Button x:Name="B_2_CE" Content="CE" Grid.Row="4" Grid.Column="6" Margin="2" Click="B_2_CE_Click"></Button>
+        <Button x:Name="B_2_C" Content="C" Grid.Row="4" Grid.Column="7" Margin="2" Click="B_2_C_Click"></Button>
+        <Button x:Name="B_2_Invert" Content="±" Grid.Row="4" Grid.Column="8" Margin="2" Click="B_2_Invert_Click" ></Button>
+        <Button x:Name="B_2_Sqrt" Content="√x" Grid.Row="4" Grid.Column="9" Margin="2" Click="B_2_Sqrt_Click" ></Button>
+
+        <Button x:Name="B_Int" Content="Int" Grid.Row="5" Grid.Column="0" Margin="2" Click="B_Int_Click" ></Button>
+        <Button x:Name="B_Sinh" Content="sinh" Grid.Row="5" Grid.Column="1" Margin="2"></Button>
+        <Button x:Name="B_Sin" Content="sin" Grid.Row="5" Grid.Column="2" Margin="2" Click="B_Sin_Click"></Button>
+        <Button x:Name="B_2_Square" Content="x²" Grid.Row="5" Grid.Column="3" Margin="2" Click="B_2_Square_Click" ></Button>
+        <Button x:Name="B_Factorial" Content="n!" Grid.Row="5" Grid.Column="4" Margin="2" Click="B_Factorial_Click" ></Button>
+        <Button x:Name="B_2_7" Content="7" Grid.Row="5" Grid.Column="5" Margin="2" Click="B_2_7_Click"></Button>
+        <Button x:Name="B_2_8" Content="8" Grid.Row="5" Grid.Column="6" Margin="2" Click="B_2_8_Click"></Button>
+        <Button x:Name="B_2_9" Content="9" Grid.Row="5" Grid.Column="7" Margin="2" Click="B_2_9_Click"></Button>
+        <Button x:Name="B_2_Divide" Content="÷" Grid.Row="5" Grid.Column="8" Margin="2" Click="B_2_Divide_Click" ></Button>
+        <Button x:Name="B_2_Per" Content="%"  Grid.Row="5" Grid.Column="9" Margin="2" Click="B_2_Per_Click" ></Button>
+
+        <Button x:Name="B_Dms" Content="dms" Grid.Row="6" Grid.Column="0" Margin="2" Click="B_Dms_Click" ></Button>
+        <Button x:Name="B_Cosh" Content="cosh" Grid.Row="6" Grid.Column="1" Margin="2" Click="B_Cosh_Click"></Button>
+        <Button x:Name="B_Cos" Content="cos" Grid.Row="6" Grid.Column="2" Margin="2" Click="B_Cos_Click"></Button>
+        <Button x:Name="B_2_xy" Content="x^y" Grid.Row="6" Grid.Column="3" Margin="2" Click="B_2_xy_Click" ></Button>
+        <Button x:Name="B_2_ySx" Content="y√x" Grid.Row="6" Grid.Column="4" Margin="2" Click="B_2_ySx_Click" ></Button>
+        <Button x:Name="B_2_4" Content="4" Grid.Row="6" Grid.Column="5" Margin="2" Click="B_2_4_Click"></Button>
+        <Button x:Name="B_2_5" Content="5" Grid.Row="6" Grid.Column="6" Margin="2" Click="B_2_5_Click"></Button>
+        <Button x:Name="B_2_6" Content="6" Grid.Row="6" Grid.Column="7" Margin="2" Click="B_2_6_Click"></Button>
+        <Button x:Name="B_2_Multiply" Content="×" Grid.Row="6" Grid.Column="8" Margin="2" Click="B_2_Multiply_Click" ></Button>
+        <Button x:Name="B_2_Reciprocal" Content="1/x"  Grid.Row="6" Grid.Column="9" Margin="2" Click="B_2_Reciprocal_Click" ></Button>
+
+        <Button x:Name="B_Pai" Content="π" Grid.Row="7" Grid.Column="0" Margin="2" Click="B_Pai_Click" ></Button>
+        <Button x:Name="B_Tanh" Content="tanh" Grid.Row="7" Grid.Column="1" Margin="2" Click="B_Tanh_Click"></Button>
+        <Button x:Name="B_Tan" Content="tan" Grid.Row="7" Grid.Column="2" Margin="2" Click="B_Tan_Click"></Button>
+        <Button x:Name="B_2_Cube" Content="x³" Grid.Row="7" Grid.Column="3" Margin="2" Click="B_2_Cube_Click" ></Button>
+        <Button x:Name="B_2_3Sx" Content="3√x" Grid.Row="7" Grid.Column="4" Margin="2" Click="B_2_3Sx_Click" ></Button>
+        <Button x:Name="B_2_1" Content="1" Grid.Row="7" Grid.Column="5" Margin="2" Click="B_2_1_Click"></Button>
+        <Button x:Name="B_2_2" Content="2" Grid.Row="7" Grid.Column="6" Margin="2" Click="B_2_2_Click"></Button>
+        <Button x:Name="B_2_3" Content="3" Grid.Row="7" Grid.Column="7" Margin="2" Click="B_2_3_Click"></Button>
+        <Button x:Name="B_2_Sub" Content="-" Grid.Row="7" Grid.Column="8" Margin="2" Click="B_2_Sub_Click" ></Button>
+        <Button x:Name="B_2_Eq" Content="=" Grid.Row="7" Grid.Column="9" Margin="2"  Grid.RowSpan="2" Click="B_2_Eq_Click"></Button>
+
+        <Button x:Name="B_FE" Content="F-E" Grid.Row="8" Grid.Column="0" Margin="2" Click="B_FE_Click" ></Button>
+        <Button x:Name="B_Exp" Content="Exp" Grid.Row="8" Grid.Column="1" Margin="2" Click="B_Exp_Click"></Button>
+        <Button x:Name="B_Mod" Content="mod" Grid.Row="8" Grid.Column="2" Margin="2"></Button>
+        <Button x:Name="B_2_Log" Content="log" Grid.Row="8" Grid.Column="3" Margin="2" Click="B_2_Log_Click" ></Button>
+        <Button x:Name="B_2_10Mx" Content="10^x" Grid.Row="8" Grid.Column="4" Margin="2" Click="B_2_10Mx_Click" ></Button>
+        <Button x:Name="B_2_0" Content="0" Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="2" Margin="2" Click="B_2_0_Click"></Button>
+        <Button x:Name="B_2_Point" Content="." Grid.Row="8" Grid.Column="7" Margin="2" Click="B_2_Point_Click"></Button>
+        <Button x:Name="B_2_Add" Content="+" Grid.Row="8" Grid.Column="8" Margin="2" Click="B_2_Add_Click"></Button>
+
+
+
+    </Grid>
+</Window>
