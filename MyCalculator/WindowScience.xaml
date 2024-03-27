@@ -55,9 +55,9 @@
             <RadioButton GroupName="du" x:Name="B_Gradient" Content="梯度" Width="132" FontSize="16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Checked="B_Gradient_Checked"></RadioButton>
         </StackPanel>
         <Button x:Name="B_M2_Clean" Content="MC" Grid.Row="3" Grid.Column="5" Margin="2" Click="B_M2_Clean_Click" ></Button>
-        <!--MR：显示记忆的数字（Memory Recall）-->
+        
         <Button x:Name="B_M2_Recall" Content="MR" Grid.Row="3" Grid.Column="6" Margin="2" Click="B_M2_Recall_Click" ></Button>
-        <!--MS：记忆当前显示的数字（Memory Save）-->
+        
         <Button x:Name="B_M2_Save" Content="MS" Grid.Row="3" Grid.Column="7" Margin="2" Click="B_M2_Save_Click"></Button>
         <Button x:Name="B_M2_Add" Content="M+" Grid.Row="3" Grid.Column="8" Margin="2" Click="B_M2_Add_Click"></Button>
         <Button x:Name="B_M2_Minus" Content="M-" Grid.Row="3" Grid.Column="9" Margin="2" Click="B_M2_Minus_Click" ></Button>
